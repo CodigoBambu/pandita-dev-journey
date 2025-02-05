@@ -2,7 +2,41 @@ import React from "react";
 import imgLogo from "../assets/logo.jpg";
 import imgAM from "../assets/AlexMoncada.jpeg";
 
+const Title = ({ text, className, scrollSpeed, level }) => {
+  const HeadingTag = `h${level}`;
+  return (
+    <HeadingTag
+      className={className}
+      data-scroll
+      data-scroll-speed={scrollSpeed}>
+      {text}
+    </HeadingTag>
+  );
+};
+
 const Header = () => {
+  const titles = [
+    {
+      text: "SOY",
+      className: "font-bold 3xs:text-[60px] 3xs:ml-2 3xs:text-white",
+      scrollSpeed: "3",
+      level: 1,
+    },
+    {
+      text: "PanditaDevCode",
+      className:
+        "font-bold 3xs:text-[37px] 3xs:-mt-7 3xs:ml-3 3xs:text-[#141418]",
+      scrollSpeed: "3",
+      level: 2,
+    },
+    {
+      text: "Alex Moncada",
+      className: "3xs:font-bold 3xs:ml-6 3xs:-mt-3 3xs:text-white",
+      scrollSpeed: "3",
+      level: 3,
+    },
+  ];
+
   return (
     <header data-scroll-container>
       <section data-scroll-section style={{ marginTop: "5em" }}>
@@ -15,15 +49,13 @@ const Header = () => {
               src={imgLogo}
               alt="logoImg"
               className="rounded-[50%] 3xs:ml-4 3xs:w-[100%]"
-              style={{ marginTop: "2em" }}
             />
           </div>
           <div className="absolute 3xs:mb-1 0">
             <img
               src={imgAM}
               alt="Alex Moncada"
-              className="3xs:ml-[9em] 3xs:w-[50%]"
-              style={{ marginTop: "-3.5em" }}
+              className="me-img 3xs:ml-[9em] 3xs:w-[50%]"
             />
           </div>
         </div>
@@ -36,25 +68,15 @@ const Header = () => {
             textShadow:
               "0 0 5px rgb(153, 153, 153), 0 0 10px rgb(109, 109, 109), 0 0 15px rgb(92, 92, 92), 0 0 20px rgb(54, 54, 54)",
           }}>
-          <h1
-            className="font-bold 3xs:text-[60px] 3xs:ml-2 3xs:text-white"
-            data-scroll
-            data-scroll-speed="3"
-            style={{ marginTop: "-.3em" }}>
-            SOY
-          </h1>
-          <h2
-            className="font-bold 3xs:text-[37px] 3xs:-mt-7 3xs:ml-3 3xs:text-[#141418]"
-            data-scroll
-            data-scroll-speed="3">
-            PanditaDevCode
-          </h2>
-          <h3
-            className="3xs:font-bold 3xs:ml-6 3xs:-mt-3 3xs:text-white"
-            data-scroll
-            data-scroll-speed="3">
-            Alex Moncada
-          </h3>
+          {titles.map((title) => (
+            <Title
+              key={title.text}
+              text={title.text}
+              className={title.className}
+              scrollSpeed={title.scrollSpeed}
+              level={title.level}
+            />
+          ))}
 
           <div
             className="flex items-center w-[90%] 3xs:ml-4 3xs:mt-0 content-center"
