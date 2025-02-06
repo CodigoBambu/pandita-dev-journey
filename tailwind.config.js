@@ -6,6 +6,10 @@ module.exports = {
       screens: {
         "3xs": "320px",
       },
+      spacing: {
+        '100vh': '100vh',
+        '80vw': '80vw',
+      },
     },
   },
   plugins: [],

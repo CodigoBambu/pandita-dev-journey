@@ -4,7 +4,11 @@ const SocialMediaLinks = () => {
   const socialLinks = [
     { id: 1, name: "YouTube", href: "https://www.youtube.com/@panditadevcode" },
     { id: 2, name: "Threads", href: "https://www.threads.net/@panditadevcode" },
-    { id: 3, name: "Instagram", href: "https://www.instagram.com/panditadevcode/" },
+    {
+      id: 3,
+      name: "Instagram",
+      href: "https://www.instagram.com/panditadevcode/",
+    },
     { id: 4, name: "TikTok", href: "https://www.tiktok.com/@panditadevcode" },
     { id: 5, name: "X (Twitter)", href: "https://x.com/panditadevcode" },
   ];
@@ -42,8 +46,7 @@ const SocialMediaLinks = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-scroll
-                data-scroll-speed="-2">
+                data-scroll>
                 {link.name}
               </a>
               <div
