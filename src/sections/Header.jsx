@@ -1,6 +1,6 @@
 import React from "react";
 import imgLogo from "../assets/logo.jpg";
-import imgAM from "../assets/AlexMoncada.jpeg";
+import imgAM from "../assets/ejemplo.jpg";
 
 const Title = ({ text, className, scrollSpeed, level }) => {
   const HeadingTag = `h${level}`;
@@ -8,7 +8,8 @@ const Title = ({ text, className, scrollSpeed, level }) => {
     <HeadingTag
       className={className}
       data-scroll
-      data-scroll-speed={scrollSpeed}>
+      data-scroll-speed={scrollSpeed}
+    >
       {text}
     </HeadingTag>
   );
@@ -18,20 +19,19 @@ const Header = () => {
   const titles = [
     {
       text: "SOY",
-      className: "font-bold 3xs:text-[60px] 3xs:ml-2 3xs:text-white",
+      className: "font-bold text-white text-[60px] -ml-44 -mt-14",
       scrollSpeed: "3",
       level: 1,
     },
     {
-      text: "PanditaDevCode",
-      className:
-        "font-bold 3xs:text-[37px] 3xs:-mt-7 3xs:ml-3 3xs:text-[#141418]",
+      text: "CodigoBambu",
+      className: "font-bold text-[#141418] text-[43px] -mt-9 mr-2 ",
       scrollSpeed: "3",
       level: 2,
     },
     {
       text: "Alex Moncada",
-      className: "3xs:font-bold 3xs:ml-6 3xs:-mt-3 3xs:text-white",
+      className: "font-bold text-white -ml-40 -mt-3",
       scrollSpeed: "3",
       level: 3,
     },
@@ -39,35 +39,33 @@ const Header = () => {
 
   return (
     <header data-scroll-container>
-      <section data-scroll-section style={{ marginTop: "5em" }}>
-        <div className="relative">
-          <div
-            className="relative 3xs:w-[35%]"
-            data-scroll
-            data-scroll-speed="2">
-            <img
-              src={imgLogo}
-              alt="logoImg"
-              className="rounded-[50%] 3xs:ml-4 3xs:w-[100%]"
-            />
-          </div>
-          <div className="absolute 3xs:mb-1 0">
-            <img
-              src={imgAM}
-              alt="Alex Moncada"
-              className="me-img 3xs:ml-[9em] 3xs:w-[50%]"
-            />
-          </div>
+      <section data-scroll-section>
+        <div
+          data-scroll
+          data-scroll-speed="2"
+          className="flex justify-start items-center content-center mt-1"
+        >
+          <img
+            src={imgLogo}
+            alt="logoImg"
+            className="w-1/3 rounded-full mt-40 ml-5"
+          />
+        </div>
+
+        <div data-scroll data-scroll-speed="2" className="flex justify-end">
+          <img
+            src={imgAM}
+            alt="Alex Moncada"
+            className="w-1/2 h-2/5 mr-5 -mt-14 -mb-3 "
+          />
         </div>
       </section>
 
-      <section data-scroll-section style={{ marginTop: "-1.8em" }}>
-        <div
-          className="3xs:relative"
-          style={{
-            textShadow:
-              "0 0 5px rgb(153, 153, 153), 0 0 10px rgb(109, 109, 109), 0 0 15px rgb(92, 92, 92), 0 0 20px rgb(54, 54, 54)",
-          }}>
+      <section
+        data-scroll-section
+        className="text-shadow text-center items-center align-center"
+      >
+        <div>
           {titles.map((title) => (
             <Title
               key={title.text}
@@ -77,18 +75,12 @@ const Header = () => {
               level={title.level}
             />
           ))}
-
-          <div
-            className="flex items-center w-[90%] 3xs:ml-4 3xs:mt-0 content-center"
-            data-scroll
-            data-scroll-speed="4">
-            <span
-              className="flex-grow border-t border-gray-300"
-              style={{
-                boxShadow:
-                  "0 0 5px rgb(255, 255, 255), 0 0 10px rgb(207, 207, 207), 0 0 15px rgb(163, 163, 163), 0 0 20px rgb(131, 131, 131)",
-              }}></span>
+          <div data-scroll data-scroll-speed="4">
+            <span></span>
           </div>
+        </div>
+        <div className="w-11/12 mx-auto mt-2 box-shadow" data-scroll data-scroll-speed="4">
+          <span className="block border-t border-gray-300"></span>
         </div>
       </section>
     </header>
